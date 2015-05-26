@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/persistence"
+	version="2.0">
+	<persistence-unit transaction-type="JTA" name="empdir">
+		<!-- Persistence Unit Provider - vendor-specific persistence provider name -->
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<jta-data-source>java:comp/env/ds/empdir</jta-data-source>
+		<class>com.empdir.Employee</class>
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.transaction.flush_before_completion"
+				value="true" />
+			<property name="hibernate.default_schema" value="kls_schema" />
+		</properties>
+	</persistence-unit>
+</persistence>
