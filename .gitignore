@@ -44,5 +44,4 @@ Temporary Items
 
 # Directories created by maven build tool
 /target/
-/target/**
 .settings/
