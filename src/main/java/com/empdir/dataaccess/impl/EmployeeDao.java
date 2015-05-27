@@ -4,12 +4,12 @@
 package com.empdir.dataaccess.impl;
 
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 
 import org.apache.log4j.Logger;
 
 import com.empdir.business.entities.Employee;
 import com.empdir.dataaccess.IEmployeeDao;
+import com.empdir.util.EntityManagerUtil;
 
 /**
  * @author sthatiparthi
@@ -17,19 +17,19 @@ import com.empdir.dataaccess.IEmployeeDao;
  */
 public class EmployeeDao implements IEmployeeDao {
 
-	@PersistenceContext(unitName = "empdir")
-	EntityManager em;
-
 	private static final Logger logger = Logger.getLogger(EmployeeDao.class);
 
 	/**
 	 * Saves the employee to the database.
 	 */
-	public void saveDistrict(Employee theEmployee) {
+	public void saveEmployee(Employee theEmployee) {
 
 		logger.info("Start: Saving the districtdata to the database in saveDistrict() method.");
 		try {
+			EntityManager em = EntityManagerUtil.getEntityManager();
+			em.getTransaction().begin();
 			em.persist(theEmployee);
+			em.getTransaction().commit();
 		} catch (Exception excp) {
 			excp.printStackTrace();
 			logger.error("Could not commit the transaction of saving the district"

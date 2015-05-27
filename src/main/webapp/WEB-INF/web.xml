@@ -4,20 +4,13 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
 
-	<servlet>
-		<servlet-name>StartUpServlet</servlet-name>
-		<servlet-class>com.empdir.servlet.StartUpServlet</servlet-class>
-		<load-on-startup>1</load-on-startup>
-	</servlet>
-	
-	<servlet>
-		<servlet-name>BicServlet</servlet-name>
-		<servlet-class>com.vsoftcorp.bic.servlet.BicRedirectServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>BicServlet</servlet-name>
-		<url-pattern>/bic/*</url-pattern>
-	</servlet-mapping>
+	<listener>
+		<listener-class>com.empdir.util.StartupListener</listener-class>
+	</listener>
+
+	<!-- <servlet> <servlet-name>BicServlet</servlet-name> <servlet-class>com.vsoftcorp.bic.servlet.BicRedirectServlet</servlet-class> 
+		</servlet> <servlet-mapping> <servlet-name>BicServlet</servlet-name> <url-pattern>/bic/*</url-pattern> 
+		</servlet-mapping> -->
 
 	<!-- this need same with resteasy servlet url-pattern -->
 	<context-param>
@@ -27,8 +20,7 @@
 	<servlet>
 		<servlet-name>resteasy-servlet</servlet-name>
 		<servlet-class>
-			org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher
-		</servlet-class>
+			org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
 		<init-param>
 			<param-name>javax.ws.rs.Application</param-name>
 			<param-value>com.empdir.application.EmpDirRestApplication</param-value>
@@ -38,5 +30,9 @@
 		<servlet-name>resteasy-servlet</servlet-name>
 		<url-pattern>/rest/*</url-pattern>
 	</servlet-mapping>
-
+	<resource-env-ref>
+		<description>DB Connection </description>
+		<resource-env-ref-name>jdbc/empDirDataSource</resource-env-ref-name>
+		<resource-env-ref-type>javax.sql.DataSource</resource-env-ref-type>
+	</resource-env-ref>
 </web-app>

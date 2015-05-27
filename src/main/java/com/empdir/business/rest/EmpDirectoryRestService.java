@@ -4,7 +4,7 @@
 package com.empdir.business.rest;
 
 import javax.ws.rs.Consumes;
-import javax.ws.rs.POST;
+import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
@@ -13,7 +13,6 @@ import org.apache.log4j.Logger;
 import com.empdir.business.IEmployeeService;
 import com.empdir.business.factory.EmpDirectoryService;
 import com.empdir.data.EmployeeData;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -38,17 +37,18 @@ public class EmpDirectoryRestService {
 		return INSTANCE;
 	}
 	
-	@POST
+	@GET
 	@Path("/employee")
-	@Consumes("application/json")
+	//@Consumes("application/json")
+	@Consumes("*/*")
 	@Produces("application/text")
 	public String saveEmployee(String empJsonString) {
 
 		logger.info("Start : EmpDirectoryRestService saveEmployee() method .");
 		try {
-			EmployeeData empData = gson.fromJson(empJsonString, EmployeeData.class);
+			//EmployeeData empData = gson.fromJson(empJsonString, EmployeeData.class);
 			IEmployeeService empService = EmpDirectoryService.getEmployeeService();
-			empService.saveEmployee(empData);
+			empService.saveEmployee(null);
 		} catch (Exception excp) {
 			logger.error("Error while saving District Data");
 			return excp.getMessage();
