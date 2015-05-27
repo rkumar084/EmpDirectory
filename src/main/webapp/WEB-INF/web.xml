@@ -32,7 +32,7 @@
 	</servlet-mapping>
 	<resource-env-ref>
 		<description>DB Connection </description>
-		<resource-env-ref-name>jdbc/empDirDataSource</resource-env-ref-name>
+		<resource-env-ref-name>jdbc/empDirDS</resource-env-ref-name>
 		<resource-env-ref-type>javax.sql.DataSource</resource-env-ref-type>
 	</resource-env-ref>
 </web-app>

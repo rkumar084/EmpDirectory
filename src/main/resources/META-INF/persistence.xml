@@ -6,7 +6,7 @@
 	<persistence-unit name="empdir" transaction-type="RESOURCE_LOCAL">
 		<!-- Persistence Unit Provider - vendor-specific persistence provider name -->
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<non-jta-data-source>java:/comp/env/jdbc/empDirDataSource</non-jta-data-source>
+		<non-jta-data-source>java:/comp/env/jdbc/empDirDS</non-jta-data-source>
 		<class>com.empdir.business.entities.Employee</class>
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
