@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.empdir.dao;
+package com.empdir.dataaccess;
 
 /**
  * @author sthatiparthi

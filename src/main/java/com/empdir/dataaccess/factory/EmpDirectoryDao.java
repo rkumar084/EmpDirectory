@@ -1,10 +1,10 @@
 /**
  * 
  */
-package com.empdir.dao.factory;
+package com.empdir.dataaccess.factory;
 
-import com.empdir.dao.IEmployeeDao;
-import com.empdir.dao.impl.EmployeeDao;
+import com.empdir.dataaccess.IEmployeeDao;
+import com.empdir.dataaccess.impl.EmployeeDao;
 
 /**
  * @author sthatiparthi

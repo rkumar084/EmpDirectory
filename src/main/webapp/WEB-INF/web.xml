@@ -6,7 +6,7 @@
 
 	<servlet>
 		<servlet-name>StartUpServlet</servlet-name>
-		<servlet-class>com.vsoftcorp.bic.servlet.StartUpServlet</servlet-class>
+		<servlet-class>com.empdir.servlet.StartUpServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	
@@ -31,7 +31,7 @@
 		</servlet-class>
 		<init-param>
 			<param-name>javax.ws.rs.Application</param-name>
-			<param-value>com.vsoftcorp.bic.application.BicRestfulApplication</param-value>
+			<param-value>com.empdir.application.EmpDirRestApplication</param-value>
 		</init-param>
 	</servlet>
 	<servlet-mapping>

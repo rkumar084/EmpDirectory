@@ -1,9 +1,14 @@
 /**
  * 
  */
-package com.empdir.service.impl;
+package com.empdir.business.impl;
 
-import com.empdir.service.IEmployeeService;
+import org.apache.log4j.Logger;
+
+import com.empdir.business.IEmployeeService;
+import com.empdir.data.EmployeeData;
+import com.empdir.dataaccess.IEmployeeDao;
+import com.empdir.dataaccess.factory.EmpDirectoryDao;
 
 /**
  * @author sthatiparthi
@@ -11,4 +16,16 @@ import com.empdir.service.IEmployeeService;
  */
 public class EmployeeService implements IEmployeeService {
 
+	private static final Logger logger = Logger
+			.getLogger(EmployeeService.class);
+
+	@Override
+	public void saveEmployee(EmployeeData empData) {
+
+		logger.info("Start : EmployeeService saveEmployee() method.");
+		// get the employee dao.
+		IEmployeeDao dao = EmpDirectoryDao.getEmployeeDao();
+		// get the entity pojo.
+		logger.info("End : EmployeeService saveEmployee() method.");
+	}
 }

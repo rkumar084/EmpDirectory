@@ -1,10 +1,10 @@
 /**
  * 
  */
-package com.empdir.service.factory;
+package com.empdir.business.factory;
 
-import com.empdir.service.IEmployeeService;
-import com.empdir.service.impl.EmployeeService;
+import com.empdir.business.IEmployeeService;
+import com.empdir.business.impl.EmployeeService;
 
 
 /**
