@@ -18,7 +18,6 @@ public class EmpDirectoryRestService {
 			.getLogger(EmpDirectoryRestService.class);
 
 	public EmpDirectoryRestService() {
-
 	}
 
 	private static final EmpDirectoryRestService INSTANCE = new EmpDirectoryRestService();
