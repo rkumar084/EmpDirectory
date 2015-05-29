@@ -15,6 +15,7 @@ public class EmpDirServer {
 	}
 
 	public static void init(String thePersistentUnit) {
+		logger.info("Emp Directory Server going to be Intialized ..");
 		EntityManagerUtil.init(thePersistentUnit);
 		intialized = true;
 		logger.info("Emp Directory Server is Intialized ..");
